@@ -4,6 +4,7 @@
 )]
 #[cfg(target_os = "macos")]
 mod menu;
+mod clipboard;
 mod tray;
 
 fn main() {
@@ -19,6 +20,7 @@ fn main() {
     builder
         .build(tauri::generate_context!())
         .expect("error while building tauri application")
+        .invoke_handler(tauri::generate_handler![clipboard::clipboard_read_image])
         .run(run_event_handler)
 }
 
