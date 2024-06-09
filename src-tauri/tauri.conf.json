@@ -7,7 +7,7 @@
     "distDir": "../cinny/dist",
     "devPath": "http://localhost:8080",
     "beforeDevCommand": "cd cinny && npm start",
-    "beforeBuildCommand": "cd cinny && npm run build"
+    "beforeBuildCommand": "cd cinny && npm run build && mkdir dist/home && cp dist/olm.wasm dist/home/"
   },
   "tauri": {
     "bundle": {
